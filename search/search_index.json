@@ -1,0 +1,1 @@
+{"config":{"lang":["ja"],"separator":"[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+","pipeline":["stemmer"],"fields":{"title":{"boost":1000.0},"text":{"boost":1.0},"tags":{"boost":1000000.0}}},"docs":[{"location":"","title":"\u3086\u308b\u3084\u304b\u306b\u5b66\u3076 C \u8a00\u8a9e\uff08\u8cc7\u6599\u30fb\u30b5\u30dd\u30fc\u30c8\uff09","text":"<p>\uff08\u6e96\u5099\u4e2d\uff09</p>"}]}
