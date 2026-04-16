@@ -1,10 +1,8 @@
 name: ci
-
 on:
   push:
     branches:
       - main
-
 permissions:
   contents: write
 
@@ -12,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Configure Git Credentials
         run: |
@@ -23,19 +21,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Set cache key
-        run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
+      - run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
       - uses: actions/cache@v4
         with:
-          path: ~/.cache
           key: mkdocs-material-${{ env.cache_id }}
+          path: ~/.cache
           restore-keys: |
             mkdocs-material-
 
-      - name: Install dependencies
-        run: |
-          pip install mkdocs-material
-
-      - name: Deploy
-        run: mkdocs gh-deploy --force
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
