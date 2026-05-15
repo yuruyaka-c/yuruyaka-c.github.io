@@ -1,15 +1,15 @@
-# ゆるやかに学ぶ C 言語（資料・サポート）
+# ゆるやかに学ぶ C 言語 | 資料・サポート
 
 !!!info "このページについて"
     - このページは、書籍『ゆるやかに学ぶ C 言語』（講談社）の資料・サポートページです
     - 環境構築、サンプルコード、書籍内の付録の内容などを掲載しています
 
 ## プログラムを動かす準備
-- [Wandbox](setup/wandbox.md)
-- [Codespaces](setup/codespaces.md)
-- [Windows](setup/windows.md)
-- [macOS](setup/mac.md)
-- [Ubuntu](setup/ubuntu.md)
+- [Wandbox で C 言語を始める](setup/wandbox.md)
+- [Codespaces で C 言語を始める](setup/codespaces.md)
+- [Windows で C 言語を始める](setup/windows.md)
+- [macOS で C 言語を始める](setup/macos.md)
+- [Ubuntu で C 言語を始める](setup/ubuntu.md)
 
 
 ## サンプルコード
