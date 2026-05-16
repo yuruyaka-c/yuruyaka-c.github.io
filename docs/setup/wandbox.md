@@ -22,7 +22,7 @@ Wandbox は、ユーザー登録なしで使えるオンラインコンパイラ
 ## 2. プログラムを書いて実行する
 
 ### 2.1 Wandbox を開く
-1. [https://wandbox.org/ :material-open-in-new:](https://wandbox.org/) にアクセスします
+1. [https://wandbox.org/ :material-open-in-new:](https://wandbox.org/){:target="_blank"} にアクセスします
 
 ### 2.2 設定を選ぶ
 1. 画面左のメニューの**言語**で「C」を選択します
