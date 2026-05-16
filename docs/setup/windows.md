@@ -66,7 +66,7 @@ wsl -l -v
 
 スタートメニューから **Ubuntu** を起動します。
 
-以降、`sudo apt update` や `gcc hello.c` などの Linux 用コマンドは、Ubuntu のターミナルで実行します。
+以降、`sudo apt update` や `gcc -std=c2x hello.c` などの Linux 用コマンドは、Ubuntu のターミナルで実行します。
 
 
 ## 4. GCC をインストールする
@@ -101,6 +101,8 @@ gcc --version
 ```txt
 gcc (Ubuntu ...)
 ```
+
+GCC 13 を使っている場合は、コンパイル時に `-std=c2x` を指定します。GCC 14 以降を使っている場合は、`-std=c23` を指定できます。
 
 
 ## 6. Visual Studio Code をインストールする
@@ -205,7 +207,7 @@ Visual Studio Code のメニューから「ターミナル」→「新しいタ�
 次のコマンドを入力して、プログラムをコンパイルします。
 
 ```sh
-gcc hello.c
+gcc -std=c2x hello.c
 ```
 
 コンパイルに成功すると、`a.out` という実行ファイルが作られます。エクスプローラー上でも `a.out` を確認できます。
@@ -259,7 +261,7 @@ int main()
 コンパイルします。
 
 ```sh
-gcc hello.c
+gcc -std=c2x hello.c
 ```
 
 実行します。

@@ -112,7 +112,7 @@ Visual Studio Code で、この `c-practice` フォルダを開きます。
 
 ---
 
-`hello.c` に、次のコードを書いてみましょう
+`hello.c` に、次のコードを書いて保存します。
 
 ```c title="hello.c"
 #include <stdio.h>

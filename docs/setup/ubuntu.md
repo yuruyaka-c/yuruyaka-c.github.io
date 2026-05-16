@@ -61,6 +61,8 @@ gcc --version
 gcc (Ubuntu ...)
 ```
 
+GCC 13 を使っている場合は、コンパイル時に `-std=c2x` を指定します。GCC 14 以降を使っている場合は、`-std=c23` を指定できます。
+
 
 ## 4. Visual Studio Code をインストールする
 
@@ -129,7 +131,7 @@ Visual Studio Code で、この `c-practice` フォルダを開きます。
 
 `c-practice` フォルダの中に、`hello.c` という名前のファイルを作成します。
 
-`hello.c` に、次のコードを書いてみましょう。
+`hello.c` に、次のコードを書いて保存します。
 
 ```c title="hello.c"
 #include <stdio.h>
@@ -153,7 +155,7 @@ Visual Studio Code のメニューから「ターミナル」→「新しいタ�
 次のコマンドを入力して、プログラムをコンパイルします。
 
 ```sh
-gcc hello.c
+gcc -std=c2x hello.c
 ```
 
 コンパイルに成功すると、`a.out` という実行ファイルが作られます。エクスプローラー上でも `a.out` を確認できます。
@@ -207,7 +209,7 @@ int main()
 コンパイルします。
 
 ```sh
-gcc hello.c
+gcc -std=c2x hello.c
 ```
 
 実行します。
@@ -256,21 +258,6 @@ Ubuntu のターミナルでは、実行中のプログラムに対してキー�
 	ターミナルで開いているフォルダに `hello.c` がありません。
 
 	Visual Studio Code で `hello.c` を保存したフォルダを開いているか確認してください。
-
-!!! question "`Permission denied` と表示される"
-
-	```txt title="エラーメッセージ"
-	bash: ./a.out: Permission denied
-	```
-
-	実行ファイルに実行権限がない可能性があります。通常は `gcc hello.c` で作成した `a.out` には実行権限が付きます。
-
-	次のコマンドで、もう一度コンパイルしてから実行します。
-
-	```sh
-	gcc hello.c
-	./a.out
-	```
 
 !!! question "`a.out: command not found` と表示される"
 
