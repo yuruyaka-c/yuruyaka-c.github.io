@@ -46,27 +46,32 @@ C 言語のファイルを保存するために、GitHub 上に作業用リポ�
 
 1. GitHub 画面右上の **+** を押します
 2. **New repository**（新しいリポジトリ）を選びます
-3. **Repository name**（リポジトリ名）に `c-practice` と入力します
-4. **Choose visibility**（コードを Web 上で公開するかどうか）で **Private**（非公開）を選びます
-5. **Create repository** を押します
+3. **Repository name**（リポジトリ名）に `c-practice` と入力します（名前は任意）
+4. **Choose visibility**（Web 上で公開するかどうか）は **Private**（非公開）を選びます
+5. 緑色の **Create repository** ボタンを押します
+
+![](../images/code-1.png)
 
 ## 4. Codespace を作成する
 次のようなスタート画面が表示されるので、**Start coding with Codespaces** 欄にある **Create a codespace** を押します。
 
+![](../images/code-2.png)
 
 ---
 
-
-1. 緑色の **Create new codespace** を押します
+1. 緑色の **Create new codespace** ボタンを押します
 2. Codespace の準備が終わるまで待ちます
+
+![](../images/code-3.png)
 
 ---
 
 準備が終わると、Web ブラウザ上に Visual Studio Code に似た画面が表示されます。
 
+![](../images/code-4.png)
 
 
-もし Codespaces の画面下にターミナルが表示されていない場合は、左側のメニュー「三本線」から「ターミナル」→「新しいターミナル」を選びます。
+もし Codespaces の画面下にターミナルが表示されていない場合は、左側の :material-menu:（メニュー）から「ターミナル」→「新しいターミナル」を選びます。
 
 
 ## 5. GCC が使えるか確認する
@@ -81,13 +86,20 @@ C 言語のファイルを保存するために、GitHub 上に作業用リポ�
 gcc --version
 ```
 
+![](../images/code-5.png)
+
+
+---
+
 次のように、バージョン情報が表示されれば準備完了です。
 
 ```txt
 gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
 ```
 
-GCC 13 では、コンパイル時に `-std=c2x` を指定します。GCC 14 以降を使っている場合は、`-std=c23` を指定できます。
+![](../images/code-6.png)
+
+GCC 13 では、コンパイル時に `-std=c2x` を指定します。GCC 14 以降の場合は、`-std=c23` を指定できます。
 
 
 
@@ -96,14 +108,22 @@ GCC 13 では、コンパイル時に `-std=c2x` を指定します。GCC 14 以
 Visual Studio Code で C 言語のコードを扱いやすくするために、C/C++ 拡張機能をインストールします。
 
 1. 左側の「拡張機能」アイコンをクリックします
-2. 検索欄に `C/C++` と入力します
+2. 検索欄に `C/C++` と入力します  
+![](../images/code-7.png)
 3. Microsoft の **C/C++** を選択します
-4. 「インストール」を押します
+4. 「インストール」を押します  
+![](../images/code-8.png)
 
 
 ## 7. 最初の C プログラムを書く
 
 画面左側のエクスプローラーで、`hello.c` という名前のファイルを作成します。
+
+![](../images/code-9.png)
+
+![](../images/code-10.png)
+
+---
 
 `hello.c` に、次のコードを書いてみましょう。
 
@@ -117,6 +137,8 @@ int main()
 }
 ```
 
+![](../images/code-11.png)
+
 このコードが、画面に `Apple` と `Banana` を表示するプログラムになります。
 
 
@@ -128,7 +150,15 @@ int main()
 gcc -std=c2x hello.c
 ```
 
+![](../images/code-12.png)
+
+---
+
 コンパイルに成功すると、`a.out` という実行ファイルが作られます。エクスプローラー上でも `a.out` を確認できます。
+
+![](../images/code-13.png)
+
+---
 
 次のコマンドで実行します。
 
@@ -136,12 +166,18 @@ gcc -std=c2x hello.c
 ./a.out
 ```
 
+![](../images/code-14.png)
+
+---
+
 ターミナル内に次のように表示されれば成功です。
 
 ```txt title="出力"
 Apple
 Banana
 ```
+
+![](../images/code-15.png)
 
 
 ## 9. 入力を扱うプログラムを実行する
@@ -206,25 +242,18 @@ Codespaces のターミナルでは、実行中のプログラムに対してキ
 Codespaces 内で作成したファイルは、Codespace の中に保存されます。GitHub のリポジトリにも保存したい場合は、変更をコミットします。
 
 1. 左側の「ソース管理」アイコンをクリックします
-2. メッセージ欄に `Add hello.c` のような説明を書きます
-3. **Commit** を押します
-4. **Sync Changes** または **Push** を押します
-
-<!-- TODO: ブラウザ版 Codespaces で初回コミット時に GitHub への認証や user.name/user.email 設定が必要になるか確認する。UI 表示は "Commit & Push" などに変わる可能性がある。 -->
+2. メッセージ欄に `Add hello.c` のような、変更内容を説明するメッセージを入力します
+3. **コミット** を押します
+4. **変更の同期** を押します
 
 コミットとプッシュが完了すると、GitHub のリポジトリページにも `hello.c` が表示されます。
 
 
 ## 11. Codespace を停止する
 
-使い終わった Codespace は停止しておきます。
+無料枠を使い切って、制限がかからないようにするために、使い終わった Codespace は停止しておくことをおすすめします。
 
-1. 画面左下の Codespaces の表示をクリックします
-2. **Stop Current Codespace** を選びます
-
-または、[https://github.com/codespaces :material-open-in-new:](https://github.com/codespaces){:target="_blank"} から Codespace を停止または削除できます。
-
-<!-- TODO: 停止操作の UI 名称は要確認。ブラウザを閉じただけでも一定時間後に自動停止するが、手動停止を案内している。 -->
+[https://github.com/codespaces :material-open-in-new:](https://github.com/codespaces){:target="_blank"} から Codespace を停止できます。
 
 
 ## 12. よくあるトラブルと対処
