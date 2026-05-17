@@ -82,7 +82,7 @@ C 言語のファイルを保存するために、GitHub 上に作業用リポ�
 
 ターミナルで次のコマンドを実行します。
 
-```sh
+```sh title="GCC のバージョンを確認するコマンド"
 gcc --version
 ```
 
@@ -110,7 +110,7 @@ Visual Studio Code で C 言語のコードを扱いやすくするために、C
 1. 左側の「拡張機能」アイコンをクリックします
 2. 検索欄に `C/C++` と入力します  
 ![](../images/code-7.png)
-3. Microsoft の **C/C++** を選択します
+3. Microsoft の「**C/C++**」または「**C/C++ Extension Pack**」を選択します（どちらを選んでも構いません。後者はいくつか追加の拡張機能が含まれています）
 4. 「インストール」を押します  
 ![](../images/code-8.png)
 
@@ -146,7 +146,7 @@ int main()
 
 ターミナルで次のコマンドを入力して、プログラムをコンパイルします。
 
-```sh
+```sh title="GCC 13 で hello.c をコンパイルするコマンド"
 gcc -std=c2x hello.c
 ```
 
@@ -162,7 +162,7 @@ gcc -std=c2x hello.c
 
 次のコマンドで実行します。
 
-```sh
+```sh title="hello.c をコンパイルしてできた実行ファイル a.out を実行するコマンド"
 ./a.out
 ```
 
@@ -214,13 +214,13 @@ int main()
 
 コンパイルします。
 
-```sh
+```sh title="GCC 13 で hello.c をコンパイルするコマンド"
 gcc -std=c2x hello.c
 ```
 
 実行します。
 
-```sh
+```sh title="hello.c をコンパイルしてできた実行ファイル a.out を実行するコマンド"
 ./a.out
 ```
 

@@ -244,7 +244,7 @@ Visual Studio Code で C 言語のコードを扱いやすくするために、C
 
 1. Visual Studio Code 左側の「拡張機能」アイコンをクリックします
 2. 検索欄に `C/C++` と入力します
-3. Microsoft の「**C/C++**」または「**C/C++ Extension Pack**」を選択します（どちらを選んでも構いません。後者はいくつかおまけ機能が付いています）
+3. Microsoft の「**C/C++**」または「**C/C++ Extension Pack**」を選択します（どちらを選んでも構いません。後者はいくつか追加の拡張機能が含まれています）
 4. 「インストール」を押します  
 ![](../images/wsl-26.png)
 
@@ -375,13 +375,13 @@ Visual Studio Code のメニューから「表示」→「ターミナル」を�
 
 === "GCC 14 以降を使っている場合"
 
-	```sh
+	```sh title="GCC 14 以降で hello.c をコンパイルするコマンド"
 	gcc -std=c23 hello.c
 	```
 
 === "GCC 13 を使っている場合"
 
-	```sh
+	```sh title="GCC 13 で hello.c をコンパイルするコマンド"
 	gcc -std=c2x hello.c
 	```
 
@@ -398,7 +398,7 @@ Visual Studio Code のメニューから「表示」→「ターミナル」を�
 
 次のコマンドで実行します。
 
-```sh
+```sh title="hello.c をコンパイルしてできた実行ファイル a.out を実行するコマンド"
 ./a.out
 ```
 
@@ -451,13 +451,21 @@ int main()
 
 コンパイルします。
 
-```sh
-gcc -std=c2x hello.c
-```
+=== "GCC 14 以降を使っている場合"
+
+	```sh title="GCC 14 以降で hello.c をコンパイルするコマンド"
+	gcc -std=c23 hello.c
+	```
+
+=== "GCC 13 を使っている場合"
+
+	```sh title="GCC 13 で hello.c をコンパイルするコマンド"
+	gcc -std=c2x hello.c
+	```
 
 実行します。
 
-```sh
+```sh title="hello.c をコンパイルしてできた実行ファイル a.out を実行するコマンド"
 ./a.out
 ```
 
