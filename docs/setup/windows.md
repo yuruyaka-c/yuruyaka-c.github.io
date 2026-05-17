@@ -2,7 +2,7 @@
 
 このページでは、**Windows** に WSL2 と Ubuntu を用意し、Visual Studio Code で C 言語のプログラムを書いて実行する方法を説明します。
 
-WSL2（Windows Subsystem for Linux 2）を使うと、Windows の中で Ubuntu を動かせます。この資料では、C 言語のコンパイルと実行は WSL2 上の Ubuntu で行います。
+WSL2（Windows Subsystem for Linux 2）を使うと、Windows の中で Ubuntu（ウブンツ）を動かせます。この資料では、C 言語のコンパイルと実行は WSL2 上の Ubuntu で行います。
 
 | デバイス | 対応状況 |
 |--|:--:|
@@ -30,79 +30,176 @@ WSL2（Windows Subsystem for Linux 2）を使うと、Windows の中で Ubuntu �
 1. スタートメニューを開きます
 2. `PowerShell` と入力します
 3. **Windows PowerShell** または **ターミナル** を右クリックします
-4. 「管理者として実行」を選びます
+4. 「管理者として実行」を選びます  
+![](../images/wsl-1.png)
+
+---
 
 PowerShell で次のコマンドを実行します。
 
-```powershell
+```powershell title="WSL と Ubuntu をインストールするコマンド"
 wsl --install
 ```
 
-インストールが終わったら、Windows を再起動します。
+![](../images/wsl-2.png)
 
-再起動後、Ubuntu の初期設定画面が表示されたら、画面の指示に従ってユーザー名とパスワードを設定します。
+![](../images/wsl-3.png)
+
+---
+
+WSL と Ubuntu のインストールが始まります。完了するまで、しばらく時間がかかることがあります。
+
+![](../images/wsl-4.png)
+
+---
+
+インストールが完了すると、次のようなメッセージが表示され、Ubuntu の初期設定が始まります。
+
+```txt
+Ubuntu を起動しています...
+Provisioning the new WSL instanance Ubuntu
+This might take a while...
+Create a default UNIX user account: （ユーザー名）
+```
+
+![](../images/wsl-5.png)
+
+表示されているユーザ名でよければ ++enter++ キーを押します。
+
+---
+
+Ubuntu のパスワードを設定します。
 
 !!!info "パスワード入力について"
 	Ubuntu のターミナルでは、パスワードを入力しても画面には文字が表示されません。何も入力されていないように見えても、実際には入力されています。入力後、++enter++ キーを押します。
 
+間違い防止のため、`Retype new password:` と、2 回目の入力も求められます。もう一度同じパスワードを入力して ++enter++ キーを押します。
 
-## 2. WSL2 で動いているか確認する
+![](../images/wsl-6.png)
 
-PowerShell で次のコマンドを実行します。
+---
 
-```powershell
+製品改善のための使用状況の収集に関する質問が表示されたら、好みに応じて選択します。++n++（いいえ）を選んで問題ありません。
+
+![](../images/wsl-7.png)
+
+---
+
+とくに指示などが表示されなくなれば、WSL2 と Ubuntu のインストールは完了です。一旦 PowerShell を閉じましょう。
+
+![](../images/wsl-8.png)
+
+
+## 2. インストールできたか確認する
+
+ふたたび PowerShell またはターミナルを開きます。今度は管理者として開く必要はありません。
+
+次のコマンドを実行します。
+
+```powershell title="WSL のバージョンを確認するコマンド"
 wsl -l -v
 ```
 
+![](../images/wsl-9.png)
+
+---
+
 次のように、Ubuntu の `VERSION` が `2` になっていれば準備できています。
 
-```txt
+```txt title="WSL のバージョン確認の出力例"
   NAME      STATE           VERSION
 * Ubuntu    Running         2
 ```
 
+![](../images/wsl-10.png)
+
+確認できたら、PowerShell を閉じます。
+
 
 ## 3. Ubuntu を起動する
 
-スタートメニューから **Ubuntu** を起動します。
+Windows のスタートメニューから **Ubuntu** を起動します。
 
-以降、`sudo apt update` や `gcc -std=c2x hello.c` などの Linux 用コマンドは、Ubuntu のターミナルで実行します。
+![](../images/wsl-11.png)
+
+---
+
+起動すると、次のような Ubuntu のターミナルが表示されます。
+
+![](../images/wsl-12.png)
 
 
 ## 4. GCC をインストールする
 
-C 言語のコードをコンパイルするために、`build-essential` というパッケージをインストールします。
+C 言語のコンパイラ GCC を使えるようにするために、`build-essential` というパッケージをインストールします。
 
 Ubuntu のターミナルで次のコマンドを順に実行します。
 
-```sh
+```sh title="パッケージ一覧を最新化するコマンド"
 sudo apt update
 ```
 
-```sh
+![](../images/wsl-13.png)
+
+パスワードの入力を求められたら、先ほど設定したパスワードを入力して ++enter++ キーを押します。
+
+![](../images/wsl-14.png)
+
+パッケージ情報の更新作業が始まります。完了するまで、しばらく時間がかかることがあります。
+
+![](../images/wsl-15.png)
+
+![](../images/wsl-16.png)
+
+---
+
+終わったら、次のコマンドを実行して、`build-essential` をインストールします。
+
+```sh title="C 言語での開発に必要な基本ツール一式をインストールするコマンド"
 sudo apt install build-essential
 ```
 
+![](../images/wsl-17.png)
+
 途中で確認を求められたら、++y++ を入力して ++enter++ キーを押します。
 
-`build-essential` をインストールすると、C 言語のコードをコンパイルするための `gcc`（ジーシーシー）というコマンドが使えるようになります。
+![](../images/wsl-18.png)
+
+![](../images/wsl-19.png)
+
+これで GCC を使う準備ができました。
 
 
 ## 5. gcc が使えるか確認する
 
+`build-essential` をインストールすると、C 言語のコードをコンパイルするための `gcc`（ジーシーシー）というコマンドが使えるようになります。
+
 Ubuntu のターミナルで次のコマンドを実行します。
 
-```sh
+```sh title="GCC のバージョンを確認するコマンド"
 gcc --version
 ```
+
+![](../images/wsl-20.png)
+
+---
 
 次のように、バージョン情報が表示されれば準備完了です。
 
 ```txt
-gcc (Ubuntu ...)
+gcc (Ubuntu ...) ...
 ```
 
-GCC 13 を使っている場合は、コンパイル時に `-std=c2x` を指定します。GCC 14 以降を使っている場合は、`-std=c23` を指定できます。
+![](../images/wsl-21.png)
+
+
+例えば GCC 15 の場合は、次のように表示されます。2026 年 5 月時点では GCC 15 が最新版です。
+
+```txt
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+```
+
+GCC 14 以降の場合は、コードのコンパイルをする際に `-std=c23` を指定することになります。GCC 13 の場合は `-std=c2x` を指定することになります。
 
 
 ## 6. Visual Studio Code をインストールする
@@ -121,10 +218,13 @@ Visual Studio Code は、Windows 側にインストールします。
 Visual Studio Code は、インストール直後は英語のインターフェースになっていることがあります。次の手順で日本語化できます。
 
 1. Visual Studio Code 左側の **Extensions** アイコンをクリックします
-2. 検索欄に `Japanese Language Pack` と入力します
+2. 検索欄に `Japanese Language Pack` と入力します  
+![](../images/wsl-22.png)
 3. Microsoft の **Japanese Language Pack for Visual Studio Code** を選択します
-4. **Install** を押します
-5. 再起動を促すメッセージが表示されたら、Visual Studio Code を再起動します
+4. **Install** を押します  
+![](../images/wsl-23.png)
+5. 再起動を促すメッセージが表示されたら、Visual Studio Code を再起動します  
+![](../images/wsl-24.png)
 
 
 ## 8. WSL 拡張機能をインストールする
@@ -134,7 +234,8 @@ Visual Studio Code から WSL2 上の Ubuntu を扱えるようにするため�
 1. Visual Studio Code 左側の「拡張機能」アイコンをクリックします
 2. 検索欄に `WSL` と入力します
 3. Microsoft の **WSL** を選択します
-4. 「インストール」を押します
+4. 「インストール」を押します  
+![](../images/wsl-25.png)
 
 
 ## 9. C/C++ 拡張機能をインストールする
@@ -143,10 +244,11 @@ Visual Studio Code で C 言語のコードを扱いやすくするために、C
 
 1. Visual Studio Code 左側の「拡張機能」アイコンをクリックします
 2. 検索欄に `C/C++` と入力します
-3. Microsoft の **C/C++** を選択します
-4. 「インストール」を押します
+3. Microsoft の「**C/C++**」または「**C/C++ Extension Pack**」を選択します（どちらを選んでも構いません。後者はいくつかおまけ機能が付いています）
+4. 「インストール」を押します  
+![](../images/wsl-26.png)
 
-WSL で開いたウィンドウでは、「WSL: Ubuntu にインストール」のようなボタンが表示されることがあります。その場合は、WSL 側にも C/C++ 拡張機能をインストールします。
+ここでインストールした拡張機能は、Windows 側の Visual Studio Code に対するものです。このあとの手順で、WSL2 上の Ubuntu 側の Visual Studio Code でも同じ拡張機能をインストールすることになります。
 
 
 ## 10. 作業用フォルダを作る
@@ -155,31 +257,78 @@ C 言語のファイルを保存するためのフォルダを、WSL2 上の Ubu
 
 Ubuntu のターミナルで次のコマンドを実行します。
 
-```sh
+```sh title="「c-practice」という名前の作業用フォルダを作るコマンド"
 mkdir -p ~/c-practice
 ```
 
-```sh
+![](../images/wsl-28.png)
+
+---
+
+次に、`c-practice` フォルダの中へ移動します。
+
+```sh title="先ほど作成した「c-practice」というフォルダに移動するコマンド"
 cd ~/c-practice
 ```
 
-次のコマンドで、Visual Studio Code から `c-practice` フォルダを開きます。
+![](../images/wsl-29.png)
 
-```sh
+---
+
+移動が完了したら、次のコマンドで、Visual Studio Code から Ubuntu 上の `c-practice` フォルダを開きます。
+
+```sh title="現在のフォルダを Visual Studio Code で開くコマンド"
 code .
 ```
 
+![](../images/wsl-30.png)
+
 初回は、Visual Studio Code が WSL 用の準備を行うため、少し時間がかかることがあります。
 
-Visual Studio Code の左下に `WSL: Ubuntu` のように表示されていれば、WSL2 上の Ubuntu に接続できています。
+![](../images/wsl-31.png)
+
+---
+
+起動した Visual Studio Code の左下に `WSL: Ubuntu` のように表示されていれば、WSL2 上の Ubuntu に接続できています。
+
+![](../images/wsl-32.png)
 
 !!!info "ファイルを置く場所"
-	WSL2 で C 言語を学習する場合は、`C:\Users\...` のような Windows 側のフォルダではなく、`~/c-practice` のような Ubuntu 側のフォルダにファイルを置くのがおすすめです。
+	WSL2 で C 言語を学習する場合は、`C:\Users\...` のような Windows 側のフォルダではなく、`~/c-practice` のような Ubuntu 側のフォルダにファイルを置くことになります。
 
 
-## 11. 最初の C プログラムを書く
+## 11. Ubuntu 上の Visual Studio Code に各種拡張機能をインストールする
+
+Visual Studio Code 左側の「拡張機能」アイコンをクリックします。
+
+「ローカル - インストール済み」欄にある一部の拡張機能に「WSL: Ubuntu にインストール」という青いボタンが表示されているはずです。
+
+![](../images/wsl-33.png)
+
+これを一通り押して、WSL2 上の Ubuntu 側の Visual Studio Code にも、先ほどの拡張機能をインストールした状態にします。
+
+![](../images/wsl-34.png)
+
+「ウィンドウを再度読み込む」というメッセージが表示されていたら、それをクリックします。自動的に Visual Studio Code が再起動します。
+
+
+## 12. 最初の C プログラムを書く
+
+Visual Studio Code 左側の「エクスプローラー」アイコンをクリックし、エクスプローラーを表示します。
+
+ここには「c-practice」フォルダの中身が表示されます。初期状態では何もありません。
+
+![](../images/wsl-35.png)
+
+---
 
 `c-practice` フォルダの中に、`hello.c` という名前のファイルを作成します。
+
+![](../images/wsl-36.png)
+
+![](../images/wsl-37.png)
+
+---
 
 `hello.c` に、次のコードを書いてみましょう。
 
@@ -193,30 +342,69 @@ int main()
 }
 ```
 
-このコードが、画面に `Apple` と `Banana` を表示するプログラムになります。
+![](../images/wsl-38.png)
 
 
-## 12. コンパイルして実行する
+「hello.c」のタブに黒丸 ● が表示されている場合は、まだ保存されていない状態です。++control+s++ キーを押して、変更内容を保存します。
 
-Visual Studio Code のメニューから「ターミナル」→「新しいターミナル」を選びます。
+
+![../images/wsl-39.png](../images/wsl-39.png)
+
+
+今保存したコードが、画面に `Apple` と `Banana` を表示するプログラムになります。
+
+
+## 13. コンパイルして実行する
+
+Visual Studio Code のメニューから「表示」→「ターミナル」を選びます。
+
+![](../images/wsl-40.png)
+
+---
 
 画面下にターミナルが表示されます。
 
-左下に `WSL: Ubuntu` と表示されたウィンドウで開いたターミナルであれば、Ubuntu のターミナルとして使えます。
+![](../images/wsl-41.png)
 
-次のコマンドを入力して、プログラムをコンパイルします。
 
-```sh
-gcc -std=c2x hello.c
-```
+左下に `WSL: Ubuntu` と表示されている状態のウィンドウで開いたターミナルであれば、Ubuntu のターミナルとして使えます。
+
+---
+
+ターミナルに、GCC のバージョンに応じて次のいずれかのコマンドを入力し、プログラムをコンパイルします。
+
+=== "GCC 14 以降を使っている場合"
+
+	```sh
+	gcc -std=c23 hello.c
+	```
+
+=== "GCC 13 を使っている場合"
+
+	```sh
+	gcc -std=c2x hello.c
+	```
+
+
+![](../images/wsl-42.png)
+
+---
 
 コンパイルに成功すると、`a.out` という実行ファイルが作られます。エクスプローラー上でも `a.out` を確認できます。
+
+![](../images/wsl-43.png)
+
+---
 
 次のコマンドで実行します。
 
 ```sh
 ./a.out
 ```
+
+![](../images/wsl-44.png)
+
+---
 
 ターミナル内に次のように表示されれば成功です。
 
@@ -225,8 +413,11 @@ Apple
 Banana
 ```
 
+![](../images/wsl-45.png)
 
-## 13. 入力を扱うプログラムを実行する
+
+
+## 14. 入力を扱うプログラムを実行する
 
 次のプログラムは、商品の価格と支払金額を入力し、おつりを計算します。
 

@@ -71,7 +71,7 @@ C 言語のファイルを保存するために、GitHub 上に作業用リポ�
 ![](../images/code-4.png)
 
 
-もし Codespaces の画面下にターミナルが表示されていない場合は、左側の :material-menu:（メニュー）から「ターミナル」→「新しいターミナル」を選びます。
+もし Codespaces の画面下にターミナルが表示されていない場合は、左側の :material-menu:（メニュー）から「表示」→「ターミナル」を選びます。
 
 
 ## 5. GCC が使えるか確認する
@@ -249,11 +249,15 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 コミットとプッシュが完了すると、GitHub のリポジトリページにも `hello.c` が表示されます。
 
 
-## 11. Codespace を停止する
+## 11. Codespace を停止する・作業を再開する
 
 無料枠を使い切って、制限がかからないようにするために、使い終わった Codespace は停止しておくことをおすすめします。
 
 [https://github.com/codespaces :material-open-in-new:](https://github.com/codespaces){:target="_blank"} から Codespace を停止できます。
+
+---
+
+停止した Codespace は、同じページから再開できます。再開すると、前回の続きから作業を始められます。
 
 
 ## 12. よくあるトラブルと対処
