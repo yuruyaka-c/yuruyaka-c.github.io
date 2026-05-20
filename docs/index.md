@@ -11,6 +11,24 @@
 - [macOS で C 言語を始める](setup/macos.md)
 - [Ubuntu で C 言語を始める](setup/ubuntu.md)
 
+#### おすすめコンパイルコマンド
+
+=== "GCC 14 以降"
+	```txt title="オプションを増やしてコンパイル"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
+	```
+
+=== "GCC 13"
+	```txt title="オプションを増やしてコンパイル"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c2x hello.c -lm
+	```
+
+=== "macOS（clang）"
+	```txt title="オプションを増やしてコンパイル"
+	clang -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
+	```
+
+
 ## 2. ターミナルでのコマンド入力のヒント
 - **一度入力したコマンドの再利用**  
 	++up++ キーや ++down++ キーを押すと、過去に入力したコマンドを呼び出して再利用できます
