@@ -292,7 +292,7 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 
 ## 12. Codespace を停止する・作業を再開する
 
-無料枠を使い切って、制限がかからないようにするために、使い終わった Codespace は停止しておくことをおすすめします。
+Codespace の毎月の無料枠を使い切り、利用制限がかからないようにするために、使い終わった Codespace は停止しておくことをおすすめします。
 
 [https://github.com/codespaces :material-open-in-new:](https://github.com/codespaces){:target="_blank"} から Codespace を停止できます。
 

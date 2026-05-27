@@ -482,7 +482,48 @@ int main()
 WSL2 上の Ubuntu では、実行中のプログラムに対してキーボードから直接入力できます。
 
 
-## 15. 作業を終える・再開する
+## 15. bool の赤波線を消す
+C 言語のコードで `bool` 型（**第 9 章**）を使うと、次のようにエディタ上で赤い波線が表示されることがあります。これはエディタの設定が C23 ではなく C17 になっているためです。
+
+```c title="赤い波線が表示されるコード例"
+#include <stdio.h>
+
+int main()
+{
+	bool b = true;
+}
+```
+
+![](../images/wsl-51.png)
+
+---
+
+解決する手順は次のとおりです。
+
+1. エクスプローラーで `hello.c` と同じ階層に `.vscode` という名前の**フォルダ**を作ります
+2. その中に `c_cpp_properties.json` という名前のファイルを作ります
+3. `c_cpp_properties.json` に次の内容を書いて保存します
+
+```json title="c_cpp_properties.json"
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "compilerPath": "/usr/bin/gcc",
+      "intelliSenseMode": "linux-gcc-x64",
+      "cStandard": "c23"
+    }
+  ],
+  "version": 4
+}
+```
+
+![](../images/wsl-52.png)
+
+これで、エディタが C23 に対応するようになり、`bool` の赤い波線が消えます。
+
+
+## 16. 作業を終える・再開する
 
 作業を終えるときは、Visual Studio Code を閉じます。
 
@@ -516,7 +557,7 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 
 
 
-## 16. おすすめのコンパイルコマンド
+## 17. おすすめのコンパイルコマンド
 
 コンパイラ・オプションの意味は [**付録 3. コンパイラ・オプション**](../appendix/compiler-options.md) を参照してください。
 
@@ -531,7 +572,7 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 	```
 
 
-## 17. よくあるトラブルと対処
+## 18. よくあるトラブルと対処
 
 ??? question "`wsl` が見つからない、または `wsl --install` が使えない"
 

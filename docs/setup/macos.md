@@ -228,7 +228,56 @@ clang -std=c23 hello.c
 
 macOS のターミナルでは、実行中のプログラムに対してキーボードから直接入力できます。
 
-## 10. おすすめコンパイルコマンド
+
+## 10. bool の赤波線を消す
+C 言語のコードで `bool` 型（**第 9 章**）を使うと、次のようにエディタ上で赤い波線が表示されることがあります。これはエディタの設定が C23 ではなく C17 になっているためです。
+
+```c title="赤い波線が表示されるコード例"
+#include <stdio.h>
+
+int main()
+{
+	bool b = true;
+}
+```
+
+![](../images/mac-10.png)
+
+---
+
+解決する手順は次のとおりです。
+
+1. エクスプローラーで `hello.c` と同じ階層に `.vscode` という名前の**フォルダ**を作ります
+2. その中に `c_cpp_properties.json` という名前のファイルを作ります
+3. `c_cpp_properties.json` に次の内容を書いて保存します
+
+```json title="c_cpp_properties.json"
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "compilerPath": "/usr/bin/clang",
+      "intelliSenseMode": "macos-clang-arm64",
+      "cStandard": "c23"
+    }
+  ],
+  "version": 4
+}
+```
+
+![](../images/mac-11.png)
+
+これで、エディタが C23 に対応するようになり、`bool` の赤い波線が消えます。
+
+
+## 11. 作業を終える・再開する
+
+作業を終えるときは、Visual Studio Code を閉じます。
+
+再開するときは、Visual Studio Code を開いて、前回作業していた `c-practice` フォルダを開きます。
+
+
+## 12. おすすめコンパイルコマンド
 
 コンパイラ・オプションの意味は [**付録 3. コンパイラ・オプション**](../appendix/compiler-options.md) を参照してください。
 
@@ -237,7 +286,7 @@ clang -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -s
 ```
 
 
-## 11. よくあるトラブルと対処
+## 13. よくあるトラブルと対処
 
 ??? question "`clang: command not found` と表示される"
 
