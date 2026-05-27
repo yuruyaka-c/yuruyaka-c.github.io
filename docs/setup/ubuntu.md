@@ -91,7 +91,7 @@ sudo apt install ./code_*.deb
 
 Visual Studio Code は、インストール直後は英語のインターフェースになっていることがあります。次の手順で日本語化できます。
 
-1. Visual Studio Code 左側の **Extensions** アイコンをクリックします
+1. Visual Studio Code 左側の **Extensions** アイコン :material-view-grid-outline: をクリックします
 2. 検索欄に `Japanese Language Pack` と入力します
 3. Microsoft の **Japanese Language Pack for Visual Studio Code** を選択します
 4. **Install** を押します
@@ -102,7 +102,7 @@ Visual Studio Code は、インストール直後は英語のインターフェ�
 
 Visual Studio Code で C 言語のコードを扱いやすくするために、C/C++ 拡張機能をインストールします。
 
-1. Visual Studio Code 左側の「拡張機能」アイコンをクリックします
+1. Visual Studio Code 左側の「拡張機能」アイコン :material-view-grid-outline: をクリックします
 2. 検索欄に `C/C++` と入力します
 3. Microsoft の **C/C++** を選択します
 4. 「インストール」を押します

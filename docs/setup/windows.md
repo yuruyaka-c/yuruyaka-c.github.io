@@ -217,7 +217,7 @@ Visual Studio Code は、Windows 側にインストールします。
 
 Visual Studio Code は、インストール直後は英語のインターフェースになっていることがあります。次の手順で日本語化できます。
 
-1. Visual Studio Code 左側の **Extensions** アイコンをクリックします
+1. Visual Studio Code 左側の **Extensions** アイコン :material-view-grid-outline: をクリックします
 2. 検索欄に `Japanese Language Pack` と入力します  
 ![](../images/wsl-22.png)
 3. Microsoft の **Japanese Language Pack for Visual Studio Code** を選択します
@@ -231,7 +231,7 @@ Visual Studio Code は、インストール直後は英語のインターフェ�
 
 Visual Studio Code から WSL2 上の Ubuntu を扱えるようにするために、WSL 拡張機能をインストールします。
 
-1. Visual Studio Code 左側の「拡張機能」アイコンをクリックします
+1. Visual Studio Code 左側の「拡張機能」アイコン :material-view-grid-outline: をクリックします
 2. 検索欄に `WSL` と入力します
 3. Microsoft の **WSL** を選択します
 4. 「インストール」を押します  
@@ -242,7 +242,7 @@ Visual Studio Code から WSL2 上の Ubuntu を扱えるようにするため�
 
 Visual Studio Code で C 言語のコードを扱いやすくするために、C/C++ 拡張機能をインストールします。
 
-1. Visual Studio Code 左側の「拡張機能」アイコンをクリックします
+1. Visual Studio Code 左側の「拡張機能」アイコン :material-view-grid-outline: をクリックします
 2. 検索欄に `C/C++` と入力します
 3. Microsoft の「**C/C++**」または「**C/C++ Extension Pack**」を選択します（どちらを選んでも構いません。後者はいくつか追加の拡張機能が含まれています）
 4. 「インストール」を押します  
@@ -299,7 +299,7 @@ code .
 
 ## 11. Ubuntu 上の Visual Studio Code に各種拡張機能をインストールする
 
-Visual Studio Code 左側の「拡張機能」アイコンをクリックします。
+Visual Studio Code 左側の「拡張機能」アイコン :material-view-grid-outline: をクリックします。
 
 「ローカル - インストール済み」欄にある一部の拡張機能に「WSL: Ubuntu にインストール」という青いボタンが表示されているはずです。
 

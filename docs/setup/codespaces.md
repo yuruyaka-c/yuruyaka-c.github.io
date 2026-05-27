@@ -107,7 +107,7 @@ GCC 13 では、コンパイル時に `-std=c2x` を指定します。GCC 14 以
 
 Visual Studio Code で C 言語のコードを扱いやすくするために、C/C++ 拡張機能をインストールします。
 
-1. 左側の「拡張機能」アイコンをクリックします
+1. 左側の「拡張機能」アイコン :material-view-grid-outline: をクリックします
 2. 検索欄に `C/C++` と入力します  
 ![](../images/code-7.png)
 3. Microsoft の「**C/C++**」または「**C/C++ Extension Pack**」を選択します（どちらを選んでも構いません。後者はいくつか追加の拡張機能が含まれています）
@@ -237,7 +237,48 @@ gcc -std=c2x hello.c
 Codespaces のターミナルでは、実行中のプログラムに対してキーボードから直接入力できます。
 
 
-## 10. 書いたコードを保存する
+## 10. bool の赤波線を消す
+C 言語のコードで `bool` 型（**第 9 章**）を使うと、次のようにエディタ上で赤い波線が表示されることがあります。これはエディタの設定が C23 ではなく C17 になっているためです。
+
+```c title="赤い波線が表示されるコード例"
+#include <stdio.h>
+
+int main()
+{
+	bool b = true;
+}
+```
+
+![](../images/code-16.png)
+
+---
+
+解決する手順は次のとおりです。
+
+1. エクスプローラーで `hello.c` と同じ階層に `.vscode` という名前の**フォルダ**を作ります
+2. その中に `c_cpp_properties.json` という名前のファイルを作ります
+3. `c_cpp_properties.json` に次の内容を書いて保存します
+
+```json title="c_cpp_properties.json"
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "compilerPath": "/usr/bin/gcc",
+      "intelliSenseMode": "linux-gcc-x64",
+      "cStandard": "c23"
+    }
+  ],
+  "version": 4
+}
+```
+
+![](../images/code-17.png)
+
+これで、エディタが C23 に対応するようになり、`bool` の赤い波線が消えます。
+
+
+## 11. 書いたコードを保存する
 
 Codespaces 内で作成したファイルは、Codespace の中に保存されます。GitHub のリポジトリにも保存したい場合は、変更をコミットします。
 
@@ -249,7 +290,7 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 コミットとプッシュが完了すると、GitHub のリポジトリページにも `hello.c` が表示されます。
 
 
-## 11. Codespace を停止する・作業を再開する
+## 12. Codespace を停止する・作業を再開する
 
 無料枠を使い切って、制限がかからないようにするために、使い終わった Codespace は停止しておくことをおすすめします。
 
@@ -260,7 +301,7 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 停止した Codespace は、同じページから再開できます。再開すると、前回の続きから作業を始められます。
 
 
-## 12. おすすめのコンパイルコマンド
+## 13. おすすめのコンパイルコマンド
 
 コンパイラ・オプションの意味は [**付録 3. コンパイラ・オプション**](../appendix/compiler-options.md) を参照してください。
 
@@ -275,7 +316,7 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 	```
 
 
-## 13. よくあるトラブルと対処
+## 14. よくあるトラブルと対処
 
 ??? question "Codespaces が表示されない"
 
