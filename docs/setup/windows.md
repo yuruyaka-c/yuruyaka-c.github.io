@@ -1,8 +1,8 @@
 # Windows で C 言語を始める
 
-このページでは、**Windows** に WSL2 と Ubuntu を用意し、Visual Studio Code で C 言語のプログラムを書いて実行する方法を説明します。
+このページでは、**Windows**（ウィンドウズ）に WSL2 と Ubuntu（ウブンツ）を用意し、Visual Studio Code（ビジュアルスタジオ・コード）で C 言語のプログラムを書いて実行する方法を説明します。
 
-WSL2（Windows Subsystem for Linux 2）を使うと、Windows の中で Ubuntu（ウブンツ）を動かせます。この資料では、C 言語のコンパイルと実行は WSL2 上の Ubuntu で行います。
+WSL2（Windows Subsystem for Linux 2）を使うと、Windows の中で Ubuntu を動かせます。この資料では、C 言語のコンパイルと実行は WSL2 上の Ubuntu で行います。
 
 | デバイス | 対応状況 |
 |--|:--:|

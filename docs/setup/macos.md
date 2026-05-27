@@ -1,6 +1,6 @@
 # macOS で C 言語を始める
 
-このページでは、**macOS** に C 言語の開発環境を用意し、Visual Studio Code で C 言語のプログラムを書いて実行する方法を説明します。
+このページでは、**macOS**（マックオーエス）に C 言語の開発環境を用意し、Visual Studio Code（ビジュアルスタジオ・コード）で C 言語のプログラムを書いて実行する方法を説明します。
 
 | デバイス | 対応状況 |
 |--|:--:|
@@ -30,7 +30,7 @@ macOS では、Command Line Tools for Xcode をインストールすると、C �
 
 ターミナルで次のコマンドを入力し、Enter キーを押します。
 
-```sh
+```sh title="Command Line Tools for Xcode をインストールするコマンド"
 xcode-select --install
 ```
 
@@ -43,7 +43,7 @@ xcode-select --install
 
 ターミナルで次のコマンドを実行します。
 
-```sh
+```sh title="clang のバージョンを確認するコマンド"
 clang --version
 ```
 
@@ -141,7 +141,7 @@ Visual Studio Code のメニューから「表示」→「ターミナル」を�
 
 次のコマンドを入力して、プログラムをコンパイルします。
 
-```sh
+```sh title="hello.c をコンパイルするコマンド"
 clang -std=c23 hello.c
 ```
 
@@ -157,7 +157,7 @@ clang -std=c23 hello.c
 
 次のコマンドで実行します。
 
-```sh
+```sh title="a.out を実行するコマンド"
 ./a.out
 ```
 
@@ -205,13 +205,13 @@ int main()
 
 コンパイルします。
 
-```sh
+```sh title="hello.c をコンパイルするコマンド"
 clang -std=c23 hello.c
 ```
 
 実行します。
 
-```sh
+```sh title="a.out を実行するコマンド"
 ./a.out
 ```
 
