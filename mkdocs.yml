@@ -90,6 +90,7 @@ nav:
     - 第 19 章 動的メモリ確保: code/19.md
     - 第 20 章 ファイルの読み書き: code/20.md
     - 第 21 章 画像処理: code/21.md
+    - 第 21 章 画像処理（追加のサンプルプログラム）: code/21add.md
   - 付録:
     - 付録 1. 記号の名称と読み方: appendix/symbols.md
     - 付録 2. キーワード一覧: appendix/keywords.md

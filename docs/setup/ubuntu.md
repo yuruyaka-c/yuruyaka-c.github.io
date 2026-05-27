@@ -231,9 +231,24 @@ gcc -std=c2x hello.c
 Ubuntu のターミナルでは、実行中のプログラムに対してキーボードから直接入力できます。
 
 
-## 11. よくあるトラブルと対処
+## 11. おすすめのコンパイルコマンド
 
-!!! question "`gcc: command not found` と表示される"
+コンパイラ・オプションの意味は [**付録 3. コンパイラ・オプション**](../appendix/compiler-options.md) を参照してください。
+
+=== "GCC 14 以降"
+	```txt title="コンパイルコマンド"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
+	```
+
+=== "GCC 13"
+	```txt title="コンパイルコマンド"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c2x hello.c -lm
+	```
+
+
+## 12. よくあるトラブルと対処
+
+??? question "`gcc: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	gcc: command not found
@@ -248,7 +263,7 @@ Ubuntu のターミナルでは、実行中のプログラムに対してキー�
 	sudo apt install build-essential
 	```
 
-!!! question "`hello.c: No such file or directory` と表示される"
+??? question "`hello.c: No such file or directory` と表示される"
 
 	```txt title="エラーメッセージ"
 	cc1: fatal error: hello.c: No such file or directory
@@ -259,7 +274,7 @@ Ubuntu のターミナルでは、実行中のプログラムに対してキー�
 
 	Visual Studio Code で `hello.c` を保存したフォルダを開いているか確認してください。
 
-!!! question "`a.out: command not found` と表示される"
+??? question "`a.out: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	a.out: command not found
@@ -275,7 +290,7 @@ Ubuntu のターミナルでは、実行中のプログラムに対してキー�
 	./a.out
 	```
 
-!!! question "`invalid value 'c23' in '-std=c23'` と表示される"
+??? question "`invalid value 'c23' in '-std=c23'` と表示される"
 
 	```txt title="エラーメッセージ"
 	gcc: error: unrecognized command-line option '-std=c23'

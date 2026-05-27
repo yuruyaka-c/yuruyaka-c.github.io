@@ -105,7 +105,7 @@ int main()
 
 ## 5. Wandbox のよくあるトラブルとその対処
 
-!!! question "`cannot find -lm` と表示される"
+??? question "`cannot find -lm` と表示される"
 	- [エラーの例 :material-open-in-new:](https://wandbox.org/permlink/T6uhQj4LAGd29o0N){:target="_blank"}
 
 	```txt title="エラーメッセージ"
@@ -117,7 +117,7 @@ int main()
 	- 解決法: 「コンパイル時オプション」の欄を空にします
 
 
-!!! question "`undefined reference to sqrt` と表示される"
+??? question "`undefined reference to sqrt` と表示される"
 	- [エラーの例 :material-open-in-new:](https://wandbox.org/permlink/mDiQJjcXtJIqoZcV){:target="_blank"}
 
 	```txt title="エラーメッセージ"

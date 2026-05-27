@@ -228,9 +228,18 @@ clang -std=c23 hello.c
 
 macOS のターミナルでは、実行中のプログラムに対してキーボードから直接入力できます。
 
-## 10. よくあるトラブルと対処
+## 10. おすすめコンパイルコマンド
 
-!!! question "`clang: command not found` と表示される"
+コンパイラ・オプションの意味は [**付録 3. コンパイラ・オプション**](../appendix/compiler-options.md) を参照してください。
+
+```txt title="コンパイルコマンド"
+clang -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
+```
+
+
+## 11. よくあるトラブルと対処
+
+??? question "`clang: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	zsh: command not found: clang
@@ -244,7 +253,7 @@ macOS のターミナルでは、実行中のプログラムに対してキー�
 	xcode-select --install
 	```
 
-!!! question "`no such file or directory: 'hello.c'` と表示される"
+??? question "`no such file or directory: 'hello.c'` と表示される"
 
 	```txt title="エラーメッセージ"
 	clang: error: no such file or directory: 'hello.c'
@@ -254,7 +263,7 @@ macOS のターミナルでは、実行中のプログラムに対してキー�
 
 	Visual Studio Code で `hello.c` を保存したフォルダを開いているか確認してください。
 
-!!! question "`Permission denied` と表示される"
+??? question "`Permission denied` と表示される"
 
 	```txt title="エラーメッセージ"
 	zsh: permission denied: a.out
@@ -270,7 +279,7 @@ macOS のターミナルでは、実行中のプログラムに対してキー�
 	./a.out
 	```
 
-!!! question "`invalid value 'c23' in '-std=c23'` と表示される"
+??? question "`invalid value 'c23' in '-std=c23'` と表示される"
 
 	```txt title="エラーメッセージ"
 	error: invalid value 'c23' in '-std=c23'

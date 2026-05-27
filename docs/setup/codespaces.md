@@ -260,9 +260,24 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 停止した Codespace は、同じページから再開できます。再開すると、前回の続きから作業を始められます。
 
 
-## 12. よくあるトラブルと対処
+## 12. おすすめのコンパイルコマンド
 
-!!! question "Codespaces が表示されない"
+コンパイラ・オプションの意味は [**付録 3. コンパイラ・オプション**](../appendix/compiler-options.md) を参照してください。
+
+=== "GCC 13"
+	```txt title="コンパイルコマンド"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c2x hello.c -lm
+	```
+
+=== "GCC 14 以降"
+	```txt title="コンパイルコマンド"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
+	```
+
+
+## 13. よくあるトラブルと対処
+
+??? question "Codespaces が表示されない"
 
 	GitHub にログインしているか確認してください。
 
@@ -270,13 +285,13 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 
 	<!-- TODO: 個人アカウント、Organization、教育機関アカウントで Codespaces の有効/無効や課金設定が異なる。 -->
 
-!!! question "Codespace の作成に時間がかかる"
+??? question "Codespace の作成に時間がかかる"
 
 	Codespace の初回作成には時間がかかることがあります。
 
 	しばらく待っても進まない場合は、ページを再読み込みするか、Codespaces の一覧から作り直します。
 
-!!! question "`gcc: command not found` と表示される"
+??? question "`gcc: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	gcc: command not found
@@ -291,7 +306,7 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 	sudo apt install build-essential
 	```
 
-!!! question "`hello.c: No such file or directory` と表示される"
+??? question "`hello.c: No such file or directory` と表示される"
 
 	```txt title="エラーメッセージ"
 	cc1: fatal error: hello.c: No such file or directory
@@ -302,7 +317,7 @@ Codespaces 内で作成したファイルは、Codespace の中に保存され�
 
 	エクスプローラーで `hello.c` を作成したフォルダを開いているか確認してください。
 
-!!! question "`a.out: command not found` と表示される"
+??? question "`a.out: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	a.out: command not found

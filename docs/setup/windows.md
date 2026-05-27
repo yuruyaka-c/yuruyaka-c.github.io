@@ -515,21 +515,37 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 ![](../images/wsl-50.png)
 
 
-## 16. よくあるトラブルと対処
 
-!!! question "`wsl` が見つからない、または `wsl --install` が使えない"
+## 16. おすすめのコンパイルコマンド
+
+コンパイラ・オプションの意味は [**付録 3. コンパイラ・オプション**](../appendix/compiler-options.md) を参照してください。
+
+=== "GCC 14 以降"
+	```txt title="コンパイルコマンド"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
+	```
+
+=== "GCC 13"
+	```txt title="コンパイルコマンド"
+	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c2x hello.c -lm
+	```
+
+
+## 17. よくあるトラブルと対処
+
+??? question "`wsl` が見つからない、または `wsl --install` が使えない"
 
 	Windows のバージョンが古い可能性があります。
 
 	Windows Update を実行してから、もう一度 `wsl --install` を試してください。
 
-!!! question "Ubuntu のパスワードを入力しても画面に表示されない"
+??? question "Ubuntu のパスワードを入力しても画面に表示されない"
 
 	Ubuntu のターミナルでは、パスワード入力中の文字は表示されません。
 
 	何も入力されていないように見えても、実際には入力されています。パスワードを入力して ++enter++ キーを押してください。
 
-!!! question "`gcc: command not found` と表示される"
+??? question "`gcc: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	gcc: command not found
@@ -544,7 +560,7 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 	sudo apt install build-essential
 	```
 
-!!! question "`code: command not found` と表示される"
+??? question "`code: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	code: command not found
@@ -554,7 +570,7 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 
 	Windows 側で Visual Studio Code と WSL 拡張機能をインストールしてから、Ubuntu のターミナルを開き直してください。
 
-!!! question "Visual Studio Code の左下に `WSL: Ubuntu` と表示されない"
+??? question "Visual Studio Code の左下に `WSL: Ubuntu` と表示されない"
 
 	Windows 側のフォルダをそのまま開いている可能性があります。
 
@@ -565,7 +581,7 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 	code .
 	```
 
-!!! question "`hello.c: No such file or directory` と表示される"
+??? question "`hello.c: No such file or directory` と表示される"
 
 	```txt title="エラーメッセージ"
 	cc1: fatal error: hello.c: No such file or directory
@@ -576,7 +592,7 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 
 	Visual Studio Code で `hello.c` を保存したフォルダを開いているか確認してください。
 
-!!! question "`a.out: command not found` と表示される"
+??? question "`a.out: command not found` と表示される"
 
 	```txt title="エラーメッセージ"
 	a.out: command not found
@@ -592,7 +608,7 @@ WSL2 上の Ubuntu が起動し、Visual Studio Code が接続されます。左
 	./a.out
 	```
 
-!!! question "`invalid value 'c23' in '-std=c23'` と表示される"
+??? question "`invalid value 'c23' in '-std=c23'` と表示される"
 
 	```txt title="エラーメッセージ"
 	gcc: error: unrecognized command-line option '-std=c23'

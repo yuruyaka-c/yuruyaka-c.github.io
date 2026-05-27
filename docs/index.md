@@ -1,8 +1,7 @@
 # ゆるやかに学ぶ C 言語 | 資料・サポート
 
-!!!info "このページについて"
-    - このページは、書籍 [『ゆるやかに学ぶ C 言語』（講談社）:material-open-in-new:](https://www.kodansha.co.jp/book/products/0000425193){:target="_blank"} の資料・サポートページです
-    - 環境構築、サンプルコード、書籍内の付録の内容などを掲載しています
+- このページは、書籍 [『ゆるやかに学ぶ C 言語』（講談社）:material-open-in-new:](https://www.kodansha.co.jp/book/products/0000425193){:target="_blank"} の資料・サポートページです
+- 環境構築、サンプルコード、書籍内の付録の内容などを掲載しています
 
 ## 1. プログラムを動かす準備
 - [Wandbox で C 言語を始める](setup/wandbox.md)
@@ -11,31 +10,18 @@
 - [macOS で C 言語を始める](setup/macos.md)
 - [Ubuntu で C 言語を始める](setup/ubuntu.md)
 
-#### おすすめコンパイルコマンド
-
-=== "GCC 14 以降"
-	```txt title="オプションを増やしてコンパイル"
-	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
-	```
-
-=== "GCC 13"
-	```txt title="オプションを増やしてコンパイル"
-	gcc -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c2x hello.c -lm
-	```
-
-=== "macOS（clang）"
-	```txt title="オプションを増やしてコンパイル"
-	clang -Wall -Wextra -Wvla -Wstrict-prototypes -Wconversion -Wshadow -pedantic -std=c23 hello.c -lm
-	```
-
 
 ## 2. ターミナルでのコマンド入力のヒント
-- **一度入力したコマンドの再利用**  
-	++up++ キーや ++down++ キーを押すと、過去に入力したコマンドを呼び出して再利用できます
-- **Tab 補完**  
-	コマンド名、ファイル名、ディレクトリ名を途中まで入力して ++tab++ キーを押すと、残りを自動で補完できます。候補が複数ある場合、もう一度 ++tab++ キーを押すと候補一覧が表示されることがあります
-- **コマンドの中断**  
-	実行中のコマンドを中断したいときは、++ctrl+c++ を押します
+
+### 一度入力したコマンドの再利用 
+- ++up++ キーや ++down++ キーを押すと、過去に入力したコマンドを呼び出して再利用できます
+
+### Tab 補完
+- コマンド名、ファイル名、ディレクトリ名を途中まで入力して ++tab++ キーを押すと、残りを自動で補完できます
+- 候補が複数ある場合、もう一度 ++tab++ キーを押すと候補一覧が表示されることがあります
+
+### コマンドの中断
+- 実行中のコマンドを中断したいときは、++ctrl+c++ を押します
 
 
 ## 3. サンプルコード
@@ -60,6 +46,7 @@
 - [第 19 章 動的メモリ確保](code/19.md)
 - [第 20 章 ファイルの読み書き](code/20.md)
 - [第 21 章 画像処理](code/21.md)
+- [第 21 章 画像処理（追加のサンプルプログラム）](code/21add.md)
 
 
 ## 4. 付録
@@ -72,4 +59,11 @@
 
 ## 5. 正誤表
 - 現在のところ、重大な誤りは見つかっていません
+
+
+## 6. 著者への連絡先
+- 「プログラムを動かす準備」や「サンプルコード」の内容でつまずいた場合、ChatGPT などの生成 AI に質問すると解決できる場合が多いです
+- それでも解決できない場合や、説明の誤りを見つけた場合は、次のフォームからご連絡ください
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPE612cdwkyi1VF8eOwwE2Q0WBIlbmv2J1Kv6BI7Iesc5-hQ/viewform?embedded=true" width="780" height="700" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 
